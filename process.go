@@ -282,8 +282,8 @@ func (l Launcher) WaitForUpgradeOrExit(cmd *exec.Cmd) (bool, error) {
 
 		if l.cfg.ShutdownGrace > 0 {
 			// Interrupt signal
-			l.logger.Info("sent interrupt to app, waiting for exit")
-			_ = cmd.Process.Signal(os.Interrupt)
+			l.logger.Info("waiting for app to exit gracefully")
+			//_ = cmd.Process.Signal(os.Interrupt)
 
 			// Wait app exit
 			psChan := make(chan *os.ProcessState)
