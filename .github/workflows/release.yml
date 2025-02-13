@@ -30,7 +30,7 @@ jobs:
         with:
           distribution: 'goreleaser'
           version: '~> v2'
-          args: build --skip-validate
+          args: build --skip validate
 
       - name: Release
         uses: goreleaser/goreleaser-action@v6
